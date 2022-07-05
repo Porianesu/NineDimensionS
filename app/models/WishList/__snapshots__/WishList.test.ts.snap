@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can create a wishList 1`] = `
+Object {
+  "items": Array [
+    Object {
+      "image": "",
+      "name": "测试3",
+      "price": 11,
+    },
+  ],
+}
+`;

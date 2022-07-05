@@ -1,0 +1,26 @@
+{
+  "suggestions_f": [
+    {
+      "name": "测试1",
+      "price": 10,
+      "image": ""
+    },
+    {
+      "name": "测试2",
+      "price": 20,
+      "image": ""
+    }
+  ],
+  "suggestions_m": [
+    {
+      "name": "测试3",
+      "price": 30,
+      "image": ""
+    },
+    {
+      "name": "测试4",
+      "price": 40,
+      "image": ""
+    }
+  ]
+}
