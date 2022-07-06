@@ -1,5 +1,6 @@
 export const Images = {
   TabStack: {
+    brand_page_background: require("../../assets/images/brand_page_background.png"),
     main_page_app_icon: require("../../assets/images/main_page_app_icon.png"),
     app_icon: require("../../assets/images/app_icon.png"),
     main_page_active: require("../../assets/images/main_page_active.png"),

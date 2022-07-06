@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { observer } from "mobx-react-lite"
-import { Image, RefreshControl, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import styles from "./styles"
 import { Images } from "@/theme"
 import Swiper from "react-native-swiper"
+import RefreshNormalHeader from "@/components/RefreshControl/RefreshNormalHeader"
 
 interface IMainPageProps {}
 const MainPage: React.FC<IMainPageProps> = () => {
@@ -16,7 +17,7 @@ const MainPage: React.FC<IMainPageProps> = () => {
   }
   return (
     <ScrollView
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+      refreshControl={<RefreshNormalHeader onRefresh={onRefresh} refreshing={refreshing} />}
       style={styles.bodyPart}
       contentContainerStyle={styles.bodyContainer}
       showsVerticalScrollIndicator={false}

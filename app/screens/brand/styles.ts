@@ -2,6 +2,11 @@ import { StyleSheet } from "react-native"
 import { p2d } from "@/utils/commonUtils"
 
 export default StyleSheet.create({
+  backGroundImage: {
+    height: p2d(258),
+    marginTop: p2d(120),
+    width: p2d(275),
+  },
   bodyContainer: {
     alignItems: "center",
     paddingBottom: p2d(30),
@@ -10,37 +15,10 @@ export default StyleSheet.create({
     flex: 1,
     width: "100%",
   },
-  brandContainer: {
-    backgroundColor: "#52C3FF",
-    borderRadius: p2d(15),
-    height: p2d(120),
-    paddingLeft: p2d(20),
-    paddingTop: p2d(20),
-    width: "100%",
-  },
-  brandDesText1: {
-    color: "#FFF",
-    fontSize: p2d(18),
-    fontWeight: "bold",
+  infoText: {
+    color: "#52C3FF",
+    fontSize: p2d(16),
     includeFontPadding: false,
-  },
-  brandDesText2: {
-    color: "#FFF",
-    fontSize: p2d(14),
-    includeFontPadding: false,
-    marginTop: p2d(2),
-  },
-  brandPart: {
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    marginTop: p2d(32),
-    paddingHorizontal: p2d(20),
-    width: "100%",
-  },
-  clipBoardContainer: {
-    marginTop: p2d(15),
-  },
-  secondBrandContainer: {
-    marginTop: p2d(20),
+    marginTop: p2d(190),
   },
 })
