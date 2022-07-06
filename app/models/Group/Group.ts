@@ -1,4 +1,4 @@
-import { flow, Instance, types } from "mobx-state-tree"
+import { Instance, types } from "mobx-state-tree"
 import { WishList } from "@/models/WishList/WithList"
 import response from "../../../db.json"
 
@@ -23,7 +23,7 @@ const User = types
     //   self.wishList.items.push(...suggestions)
     // }),
     async getSuggestions() {
-      const res = await new Promise((resolve, reject) => {
+      const res = await new Promise((resolve) => {
         resolve(response)
       })
       self.addSuggestions(res[`suggestions_${self.gender}`])

@@ -1,6 +1,7 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
 import { CharacterStoreModel } from "../character-store/character-store"
 import { Group } from "@/models/Group/Group"
+import { SystemMessages } from "@/models/system-message-store/system-message-store"
 
 /**
  * A RootStore model.
@@ -30,7 +31,8 @@ export const RootStoreModel = types.model("RootStore").props({
       gender: 'm',
       wishList: {},
     }]
-  })
+  }),
+  systemMessageStore: types.optional(SystemMessages,{})
 })
 
 /**

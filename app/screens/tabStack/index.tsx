@@ -2,11 +2,23 @@ import { StackScreenProps } from "@react-navigation/stack"
 import { NavigatorParamList } from "@/navigators"
 import { observer } from "mobx-react-lite"
 import React, { useState } from "react"
-import { Route, SceneMap, TabView } from "react-native-tab-view"
-import { TouchableOpacity, useWindowDimensions, View, Animated, Image } from "react-native"
+import { Route, TabView } from "react-native-tab-view"
+import {
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+  Animated,
+  Image,
+  Text,
+  StatusBar,
+} from "react-native"
 import styles from "./styles"
 import { NavigationState, SceneRendererProps } from "react-native-tab-view/lib/typescript/types"
 import { Images } from "@/theme"
+import MainPage from "@/screens/mainPage"
+import { SafeAreaView } from "react-native-safe-area-context"
+import Scene from "@/screens/scene"
+import Brand from "@/screens/brand"
 
 const routes: Array<Route> = [
   {
@@ -27,15 +39,11 @@ const routes: Array<Route> = [
   },
 ]
 
-const FirstRoute = () => <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
-
-const SecondRoute = () => <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-const renderScene = SceneMap({
-  "0": FirstRoute,
-  "1": SecondRoute,
-  "2": FirstRoute,
-  "3": SecondRoute,
-})
+const FirstRoute = () => (
+  <View style={{ flex: 1, backgroundColor: "#ff4081" }}>
+    <Text>123</Text>
+  </View>
+)
 const getTabImage = (key, isActive: boolean) => {
   switch (key) {
     case "0":
@@ -70,8 +78,30 @@ const TabStack: React.FC<StackScreenProps<NavigatorParamList, "tabStack">> = (pr
     route: {
       params: { initTab },
     },
+    navigation,
   } = props
   const [index, setIndex] = useState<number>(initTab || 0)
+  const renderScene = ({
+    route,
+  }: SceneRendererProps & {
+    route: Route
+  }) => {
+    switch (route.key) {
+      case "0":
+        return <MainPage />
+      case "1":
+        return <Scene />
+      case "2":
+        return <Brand />
+      case "3":
+        return <FirstRoute />
+      default:
+        return null
+    }
+  }
+  const goSystemMessage = () => {
+    navigation.navigate("systemMessage")
+  }
   const renderTabBar = (
     props: SceneRendererProps & {
       navigationState: NavigationState<Route>
@@ -100,15 +130,24 @@ const TabStack: React.FC<StackScreenProps<NavigatorParamList, "tabStack">> = (pr
     )
   }
   return (
-    <TabView
-      lazy={true}
-      renderTabBar={renderTabBar}
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-      initialLayout={{ width: layout.width }}
-      tabBarPosition={"bottom"}
-    />
+    <SafeAreaView edges={["top"]} style={[styles.pageContainer, { width: layout.width }]}>
+      <StatusBar hidden={false} translucent={true} backgroundColor={"transparent"}></StatusBar>
+      <View style={styles.headerPart}>
+        <Image source={Images.TabStack.main_page_app_icon} style={styles.headerLeftIcon}></Image>
+        <TouchableOpacity style={styles.headerRightPart} onPress={goSystemMessage}>
+          <Image style={styles.headerRightImage} source={Images.TabStack.main_page_notify} />
+        </TouchableOpacity>
+      </View>
+      <TabView
+        lazy={true}
+        renderTabBar={renderTabBar}
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+        initialLayout={{ width: layout.width }}
+        tabBarPosition={"bottom"}
+      />
+    </SafeAreaView>
   )
 }
 export default observer(TabStack)

@@ -12,6 +12,7 @@ import { WelcomeScreen, DemoScreen, DemoListScreen } from "@/screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import WishListView from "@/screens/wishListView"
 import TabStack from "@/screens/tabStack"
+import SystemMessage from "@/screens/systemMessage"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -34,15 +35,18 @@ export type NavigatorParamList = {
   tabStack: {
     initTab: number
   }
+  systemMessage: undefined
 }
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
-
 const AppStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        // @ts-ignore
+        // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        animation: "slide_from_right",
       }}
       initialRouteName="welcome"
     >
@@ -52,6 +56,7 @@ const AppStack = () => {
       {/** 🔥 Your screens go here */}
       <Stack.Screen name={"wishList"} component={WishListView} />
       <Stack.Screen name={"tabStack"} component={TabStack} />
+      <Stack.Screen name={"systemMessage"} component={SystemMessage} />
     </Stack.Navigator>
   )
 }
