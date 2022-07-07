@@ -5,15 +5,22 @@ import styles from "./styles"
 import { Images } from "@/theme"
 import Swiper from "react-native-swiper"
 import RefreshNormalHeader from "@/components/RefreshControl/RefreshNormalHeader"
+import { useNavigation } from "@react-navigation/native"
+import { NavigationProp } from "@react-navigation/core/src/types"
+import { NavigatorParamList } from "@/navigators"
 
 interface IMainPageProps {}
 const MainPage: React.FC<IMainPageProps> = () => {
+  const navigation = useNavigation<NavigationProp<NavigatorParamList>>()
   const [refreshing, setRefreshing] = useState<boolean>(false)
   const onRefresh = () => {
     setRefreshing(true)
     setTimeout(() => {
       setRefreshing(false)
     }, 1000)
+  }
+  const goMyCostume = () => {
+    navigation.navigate("myCostume")
   }
   return (
     <ScrollView
@@ -23,7 +30,7 @@ const MainPage: React.FC<IMainPageProps> = () => {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.characterBG}>
-        <TouchableOpacity style={styles.dressUpBtn}>
+        <TouchableOpacity style={styles.dressUpBtn} onPress={goMyCostume}>
           <Image style={styles.dressUpBtnImage} source={Images.TabStack.main_page_dress_up_icon} />
           <Text style={styles.dressUpBtnText}>装扮</Text>
         </TouchableOpacity>

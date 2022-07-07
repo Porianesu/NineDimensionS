@@ -74,13 +74,8 @@ const getTabImage = (key, isActive: boolean) => {
 }
 const TabStack: React.FC<StackScreenProps<NavigatorParamList, "tabStack">> = (props) => {
   const layout = useWindowDimensions()
-  const {
-    route: {
-      params: { initTab },
-    },
-    navigation,
-  } = props
-  const [index, setIndex] = useState<number>(initTab || 0)
+  const { route, navigation } = props
+  const [index, setIndex] = useState<number>(route?.params?.initTab || 0)
   const renderScene = ({
     route,
   }: SceneRendererProps & {

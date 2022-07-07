@@ -13,6 +13,7 @@ import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import WishListView from "@/screens/wishListView"
 import TabStack from "@/screens/tabStack"
 import SystemMessage from "@/screens/systemMessage"
+import MyCostume from "@/screens/myCostume"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -36,6 +37,9 @@ export type NavigatorParamList = {
     initTab: number
   }
   systemMessage: undefined
+  myCostume: {
+    initTab: number
+  }
 }
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<NavigatorParamList>()
@@ -57,6 +61,7 @@ const AppStack = () => {
       <Stack.Screen name={"wishList"} component={WishListView} />
       <Stack.Screen name={"tabStack"} component={TabStack} />
       <Stack.Screen name={"systemMessage"} component={SystemMessage} />
+      <Stack.Screen name={"myCostume"} component={MyCostume} />
     </Stack.Navigator>
   )
 }

@@ -1,4 +1,22 @@
 export const Images = {
+  MyCostume: {
+    my_costume_actions_active: require("../../assets/images/my_costume_actions_active.png"),
+    my_costume_actions_inactive: require("../../assets/images/my_costume_actions_inactive.png"),
+    my_costume_face_active: require("../../assets/images/my_costume_face_active.png"),
+    my_costume_face_inactive: require("../../assets/images/my_costume_face_inactive.png"),
+    my_costume_clothes_active: require("../../assets/images/my_costume_clothes_active.png"),
+    my_costume_clothes_inactive: require("../../assets/images/my_costume_clothes_inactive.png"),
+    my_costume_turn_right: require("../../assets/images/my_costume_turn_right.png"),
+    my_costume_turn_left: require("../../assets/images/my_costume_turn_left.png"),
+    my_costume_female: require("../../assets/images/my_costume_female.png"),
+    my_costume_male: require("../../assets/images/my_costume_male.png"),
+    my_costume_reduction_unavailable: require("../../assets/images/my_costume_reduction_unavailable.png"),
+    my_costume_reduction_available: require("../../assets/images/my_costume_reduction_available.png"),
+    my_costume_next_unavailable: require("../../assets/images/my_costume_next_unavailable.png"),
+    my_costume_next_available: require("../../assets/images/my_costume_next_available.png"),
+    my_costume_background: require("../../assets/images/my_costume_background.png"),
+    my_costume_reset: require("../../assets/images/my_costume_reset.png"),
+  },
   TabStack: {
     brand_page_background: require("../../assets/images/brand_page_background.png"),
     main_page_app_icon: require("../../assets/images/main_page_app_icon.png"),

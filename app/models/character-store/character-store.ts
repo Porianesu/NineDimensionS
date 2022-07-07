@@ -1,7 +1,7 @@
 import { Instance, SnapshotIn, SnapshotOut, types } from "mobx-state-tree"
 import { CharacterModel, CharacterSnapshotOut } from "../character/character"
-import { CharacterApi } from "../../services/api/character-api"
-import { withEnvironment } from "../extensions/with-environment"
+import { CharacterApi } from "@/services/api/character-api"
+import { withEnvironment } from "@/models"
 
 /**
  * Example store containing Rick and Morty characters
