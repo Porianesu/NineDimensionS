@@ -97,6 +97,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-native": "4.0.0",
     "expo-modules-autolinking": "^0.8.1",
     "fbjs-scripts": "3.0.1",

@@ -13,7 +13,7 @@ export interface WallpaperProps {
   backgroundImage?: string
 
   /**
-   * One of the different types of wallpaper presets.
+   * One of the different commonTypes of wallpaper presets.
    */
   preset?: WallpaperPresets
 }

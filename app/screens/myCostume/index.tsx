@@ -4,12 +4,12 @@ import { NavigatorParamList } from "@/navigators"
 import React, { useState } from "react"
 import styles from "./styles"
 import {
-  View,
-  useWindowDimensions,
-  ImageBackground,
-  TouchableOpacity,
   Image,
+  ImageBackground,
   Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
 } from "react-native"
 import { Images } from "@/theme"
 import { SafeAreaView } from "react-native-safe-area-context"
@@ -17,6 +17,7 @@ import { Route, TabView } from "react-native-tab-view"
 import { NavigationState, SceneRendererProps } from "react-native-tab-view/lib/typescript/types"
 import CostumeTabPage from "@/screens/myCostume/components/costumeTabPage"
 import { useStores } from "@/models"
+import { CommodityType } from "@/screens/myCostume/types"
 
 const routes: Array<Route> = [
   {
@@ -59,7 +60,7 @@ const MyCostume: React.FC<StackScreenProps<NavigatorParamList, "myCostume">> = (
   const { navigation, route } = props
   const {
     myCostumeStore: {
-      character: { gender, changeGender },
+      character: { gender, changeGender, clothes, face, action },
       recorder,
       next,
       reduction,
@@ -80,11 +81,11 @@ const MyCostume: React.FC<StackScreenProps<NavigatorParamList, "myCostume">> = (
   }) => {
     switch (route.key) {
       case "0":
-        return <CostumeTabPage />
+        return <CostumeTabPage type={CommodityType.clothes} />
       case "1":
-        return <CostumeTabPage />
+        return <CostumeTabPage type={CommodityType.face} />
       case "2":
-        return <CostumeTabPage />
+        return <CostumeTabPage type={CommodityType.action} />
       default:
         return null
     }
@@ -133,6 +134,9 @@ const MyCostume: React.FC<StackScreenProps<NavigatorParamList, "myCostume">> = (
             </TouchableOpacity>
           </View>
           <View style={styles.bodyPendantsContainer}>
+            <Text>{face}</Text>
+            <Text>{clothes}</Text>
+            <Text>{action}</Text>
             {recorder ? (
               <View style={styles.bodyRightPartBtnGroups}>
                 <TouchableOpacity

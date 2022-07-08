@@ -14,7 +14,7 @@ export interface ScreenProps {
   style?: StyleProp<ViewStyle>
 
   /**
-   * One of the different types of presets.
+   * One of the different commonTypes of presets.
    */
   preset?: ScreenPresets
 

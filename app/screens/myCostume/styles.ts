@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native"
 import { p2d } from "@/utils/commonUtils"
 export default StyleSheet.create({
   bodyPendantsContainer: {
+    alignItems: "center",
     height: p2d(345),
     marginTop: p2d(20),
     position: "relative",

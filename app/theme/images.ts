@@ -1,5 +1,9 @@
 export const Images = {
   MyCostume: {
+    my_costume_gender_icon_male: require("../../assets/images/my_costume_gender_icon_male.png"),
+    my_costume_gender_icon_female: require("../../assets/images/my_costume_gender_icon_female.png"),
+    my_costume_gender_icon_currency: require("../../assets/images/my_costume_gender_icon_currency.png"),
+    my_costume_no_clothes: require("../../assets/images/my_costume_no_clothes.png"),
     my_costume_actions_active: require("../../assets/images/my_costume_actions_active.png"),
     my_costume_actions_inactive: require("../../assets/images/my_costume_actions_inactive.png"),
     my_costume_face_active: require("../../assets/images/my_costume_face_active.png"),
